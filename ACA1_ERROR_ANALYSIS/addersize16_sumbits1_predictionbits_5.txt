@@ -1,0 +1,25 @@
+ACA1 ERROR ANALYSIS
+
+Parameters :
+	SIZE = 16
+	Result bits = 1
+	Prediction bits = 5
+
+Number of iterations	: 1000
+Number of error cases	: 83
+Error Rate = errorcount/no. of iterations
+	=8.30
+Maximum Hamming Distance = 7
+Average Hamming Distance = Total_BIT_Flip_Error / iterations
+	= 0.153 (Over all iterations)
+	= 1.843 (Over erroneous iterations)
+
+Maximum Error = 32768 (Absolute value)
+Average error(Error_Distance)(sum of errors/iterations) = 11.869624636538871 
+	= 6972.145 (Over erroneous iterations)
+
+Average Maximum Error = 0.9951409135082604 
+
+Acceptance Probability Over iterations
+	=91.900 (in %) 
+

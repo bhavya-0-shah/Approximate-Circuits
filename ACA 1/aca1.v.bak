@@ -1,0 +1,53 @@
+/*
+ACA exploits the fact that if maximum propogation length for addition (P) is known then the carry out of any i th bit is depended only on bits from i to i-(p+2)
+and for others the cout is found locally by <<<gi = Ai * Bi>>> and <<<< ki = (Ai + Bi)' >>>> signals for which it is 1 and 0 respectively so the worst case 
+delay becomes for the one P+2 as it is the longest carry propogation length, we use various P+2 bit CLA to find the MSB of sum for each except for first P+2 bits
+which is shown in the code below.
+
+
+we get approximate result as we generally donot know the longest carry propogation length
+ 
+P is generally found to be equal to the longest chain of ones in N bit number
+*/
+
+
+
+
+
+
+
+module aca1 #(parameter N=30, K=6)(
+	output [N:1] SUM,
+	output COUT,
+	input [N:1] A, B,
+	input CIN
+);
+	wire [N-K+1-K:0] couti;
+	wire [((N-(K))*(K-1)):1] notused;
+	
+	CLA_p_v #(K,2) CLAINST(        //first K bits CLA
+				SUM[K:1],
+				couti[1],
+				A[K:1],
+				B[K:1],
+				1'b0
+			);
+
+
+	genvar i;
+
+	generate
+		for(i=K+1; i<=N; i=i+1) 
+		begin
+			CLA_p_v #(K,2) CLAINST(                                   //from this point now we only need th MSB of the Sum
+				{SUM[i], notused[(K-1)*(i-(K)):(K-1)*(i-(K+1))+1]},
+				couti[i-K-1],
+				A[i:i-(K-1)],
+				B[i:i-(K-1)],
+				1'b0
+			);
+		end
+	endgenerate
+
+	assign COUT=couti[N-K-K+1];
+endmodule

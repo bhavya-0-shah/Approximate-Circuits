@@ -1,0 +1,92 @@
+1.Parameters :
+
+        N = 64
+
+        RESULT BITS = 1
+
+        P (MAXIMUM CARRY PROPOGATION) = 11
+
+        valency = 1
+
+
+Number of iterations    : 1000000
+
+Number of error cases   : 6408
+
+Error Rate = errorcount/no. of iterations
+
+= 0.641%
+
+
+Maximum Hamming Distance = 16
+
+Average Hamming Distance = Total_BIT_Flip_Error / iterations
+
+= 0.013 (Over all iterations)
+
+= 1.998 (Over erroneous iterations)
+
+
+Average Maximum Error = 0.9999725638216108
+
+
+HDP = 0.020
+
+MRED = 0.016
+
+NMED = 0.014
+
+
+Acceptance Probability Over iterations
+
+= 99.000  (in %)
+
+#******************************************************************************
+*******************************************************************************
+2.Parameters :
+
+        N = 64
+
+        RESULT BITS = 1
+
+        P (MAXIMUM CARRY PROPOGATION) = 17
+
+        valency = 1
+
+
+Number of iterations    : 1000000
+
+Number of error cases   : 80
+
+Error Rate = errorcount/no. of iterations
+
+= 0.008%
+
+
+Maximum Hamming Distance = 7
+
+Average Hamming Distance = Total_BIT_Flip_Error / iterations
+
+= 0.000 (Over all iterations)
+
+= 1.900 (Over erroneous iterations)
+
+
+Average Maximum Error = 0.9999944384329528
+
+
+HDP = 0.000
+
+MRED = 0.000
+
+NMED = 0.000
+
+
+Acceptance Probability Over iterations
+
+= 99.000  (in %)
+
+
+
+
+
